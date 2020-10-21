@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org" th:lang="${#locale.language}" lang="en">
+    <head>
+        <meta name="description" content="Home page"/>
+        <title>Mailing List App</title>
+    </head>
+    <body>
+        <h3>Mailing List App</h3>
+        <th:block th:each="message : ${messages}">
+            <p th:text="${message.text}"></p>
+        </th:block>        
+    </body>
+</html>

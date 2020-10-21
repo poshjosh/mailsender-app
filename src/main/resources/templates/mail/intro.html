@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:lang="${#locale.language}" lang="en">
+    <head>
+        <title>Intro to HeroBids</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div style="padding:0 1rem 1rem 1rem; border:0.25rem solid #004488; max-width:18rem; color:#003366; font-size:0.75rem; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; line-height:0.75rem; ">
+            <div style="text-align:center;">
+                <h1>There has never been</h1>
+                <h1>an auction like this</h1>
+            </div>
+            <div>
+                <div style="text-align:center;">
+                    <a th:with="url=(@{|${baseUrl}|})" th:href="${url}">
+                        <img width="128" height="128" th:src="@{|${baseUrl}/images/app-icon.png|}" alt="HeroBids icon" title="HeroBids icon"/>
+                    </a>
+                </div>
+                <a th:with="url=(@{|${baseUrl}/auction-items/222|})" th:href="${url}">
+                    <img width="128" height="128" src="https://owoblow-images.s3.us-east-2.amazonaws.com/.webstore/uploaded_files/2020/10/09/1750de2316e_0.jpg" alt="Addidas Sneakers"/>
+                </a>
+                <a th:with="url=(@{|${baseUrl}/auction-items/14|})" th:href="${url}">
+                    <img width="128" height="128" src="https://owoblow-images.s3.us-east-2.amazonaws.com/.webstore/uploaded_files/2020/09/25/Tissot-Lelode-swiss-made-brown-leather-watch.jpg" alt="Tissot Watch"/>
+                </a>
+            </div>
+            
+            <div style="text-align:center; border:0.5rem #003366 inset; background-color:beige; padding:0.5rem; margin-top:1rem; margin-bottom:1rem;">
+                <h2>Prices fall with each bid</h2>
+                <h1 style="color:red;">N9,000</h1>
+                <h2 style="color:red;">N7,000</h2>
+                <h3 style="color:red;">N5,000</h3>
+                <a href="https://herobids.com" 
+                   style="display:inline-block; padding:0.5rem 1rem; text-align:center; text-decoration:none; color:#ffffff; background-color:#004488; border-radius:0.25rem; outline:none;">
+                    <h2>Learn More</h2>
+                </a>
+                <h3>New users get 300 free credits</h3>
+            </div>
+            <div>
+                <a th:with="url=(@{|${baseUrl}/auction-items/195|})" th:href="${url}">
+                    <img width="128" height="128" src="https://owoblow-images.s3.us-east-2.amazonaws.com/.webstore/uploaded_files/2020/10/09/1750dd9b1e6_0.jpg" alt="Leoson Sneakers"/>
+                </a>
+                <a th:with="url=(@{|${baseUrl}/auction-items/5|})" th:href="${url}">
+                    <img width="128" height="128" src="https://owoblow-images.s3.us-east-2.amazonaws.com/.webstore/uploaded_files/2020/09/24/Binatone-FP-850-Food-Processor-Black.jpg" alt="Binatone Food Processor"/>
+                </a>
+                <br/>
+                <a th:with="url=(@{|${baseUrl}/auction-items/333|})" th:href="${url}">
+                    <img width="128" height="128" src="https://owoblow-images.s3.us-east-2.amazonaws.com/.webstore/uploaded_files/2020/10/11/1751685e6d8_0.jpg" alt="Hisense 50 inch TV"/>
+                </a>
+                <a th:with="url=(@{|${baseUrl}/auction-items/361|})" th:href="${url}">
+                    <img width="128" height="128" src="https://owoblow-images.s3.us-east-2.amazonaws.com/.webstore/uploaded_files/2020/10/17/17537b27381_0.jpg" alt="Huawei P40 pro"/>
+                </a>
+            </div>
+            <a th:with="url=(@{|${baseUrl}|})" th:href="${url}">
+                <h3 style="text-align:center;">Claim your 300 free credits here</h3>
+            </a>
+        </div>
+        <p>
+            <small>
+                <a th:with="url=(@{|${baseUrl}|})" th:href="${url}">HeroBids.com</a>
+                &emsp;&emsp;
+                <a th:with="url=(@{|${unsubscribeUrl}|})" th:href="${url}">Unsubscribe</a>
+            </small>
+        </p>
+    </body>
+</html>

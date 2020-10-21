@@ -1,0 +1,83 @@
+spring:
+  application:
+    name: mailsender
+  profiles:
+    # The commented value for `active` can be replaced with valid Spring profiles to load.
+    # Otherwise, it will be filled in by maven when building the JAR file
+    # Either way, it can be overridden by `--spring.profiles.active` value passed in the commandline or `-Dspring.profiles.active` set in `JAVA_OPTS`
+    active: dev  #spring.profiles.active#
+# java mail properties
+  mail:
+    properties:
+      mail:
+        host: smtp.gmail.com
+        port: 587
+        debug: false
+        transport:
+          protocol: smtps
+        smtp:
+          starttls:
+            enable: true
+            required: true
+          host: ${spring.mail.host}
+          port: ${spring.mail.port}
+          quitwait: false
+          auth: true
+#          ssl:
+#            enable: true
+  main:
+    banner-mode: off
+  task:
+    execution:
+      thread-name-prefix: mailsender-task-
+      pool:
+        core-size: 2
+        max-size: 50
+        queue-capacity: 10000
+    scheduling:
+      thread-name-prefix: mailsender-scheduling-
+      pool:
+        size: 2
+  thymeleaf:
+    mode: HTML
+  output:
+    ansi:
+      console-available: true
+        
+  datasource: 
+    url: 
+    username: 
+    password: 
+    continue-on-error: false
+  h2:
+    console:
+      enabled: true
+  jpa: 
+    show-sql: false
+
+server:
+  use-forward-headers: true  
+  servlet:
+    session:
+      cookie:
+        http-only: true
+        
+mailsender:
+  username: admin
+  password: 
+  base-url: http://localhost:${server.port}
+  client-base-url: https://herobids.com
+  sender-email: noreply@herobids.com
+  dir-name: .webstore
+  dir: ${user.home}/${mailsender.dir-name}
+  
+  aws:
+    access-key: 
+    secret-key: 
+    bucket-name: owoblow-storage
+    images-bucket-name: owoblow-images
+  gmail:
+    tokensDirectoryPath: ${mailsender.dir}/config/gmail
+    credentialsFilePath: ${mailsender.dir}/config/gmail/client.json
+    accessTokenScopes: 
+      - https://www.googleapis.com/auth/gmail.send
